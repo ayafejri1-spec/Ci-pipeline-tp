@@ -1,0 +1,24 @@
+name: CI pipeline
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+  steps:
+    -uses:actions/checkout
+    -name:installer python
+      uses:actions/setup-python 
+      with:
+        python-version:"3.11"
+    -name:installer dependecies
+      run:pip intall -r requirements.txt 
+    -name:instal flake8
+      run:pip install 
+  test:
+    needs:lint
+  steps:
+      
+
