@@ -14,11 +14,15 @@ jobs:
       with:
         python-version:"3.11"
     -name:installer dependecies
-      run:pip intall -r requirements.txt 
+     run:pip intall -r requirements.txt 
     -name:instal flake8
-      run:pip install 
+     run:pip install 
   test:
     needs:lint
   steps:
+    -name:installer dependecies
+     run:pip install -r requirements.txt
+    -name:Exécuter pytest avec couverture
+     run:pytest tests/ -v --cov=src
       
 
