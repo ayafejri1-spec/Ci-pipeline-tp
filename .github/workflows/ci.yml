@@ -27,8 +27,7 @@ jobs :
           flake8 tests --count --max-line-length=127 --statistics
 
       - name : lances les tests
-        run : PYTHONPATH=. pytest -v --cov=app  
-            
+        run : PYTHONPATH=. pytest -v --cov=app    
 
       
 
