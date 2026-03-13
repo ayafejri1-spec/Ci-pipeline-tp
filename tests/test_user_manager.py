@@ -22,8 +22,7 @@ def test_remove_user():
     assert manager.count_users() == 0
 
 
-def test_remove_nonexistent_user():
+def test_remove_unknown_users():
     manager = UserManager()
     with pytest.raises(ValueError):
         manager.remove_user("Saad")
-        
